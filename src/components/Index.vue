@@ -1,4 +1,14 @@
 <template>
+    <div>
+        <div class="left-box">
+            <div class="left-content">
+                <p class="param-set">参数设置</p>
+                <p>首次预期次数：<input type="number" placeholder="请设置次数"></p>
+                 <p>首次预期次数：<input type="number" placeholder="请设置次数"></p>
+                  <p>首次预期次数：<input type="number" placeholder="请设置次数"></p>
+                   <p>首次预期次数：<input type="number" placeholder="请设置次数"></p>
+            </div>
+        </div>
     <div class="wraper">
         <lottery
             @lotteryClick="lotteryClick"
@@ -11,7 +21,14 @@
             pointer-bg="./static/pointer.png"
             :lottery-width="['85%','35%']"
         />
+        <p class="tips">Tips:本次抽奖中奖概率为10%,本次抽奖中奖概率为10%,本次抽奖中奖概率为10%</p>
+        <p class="tips">Tips:本次抽奖中奖概率为10%,本次抽奖中奖概率为10%</p>
+        <p class="tips">Tips:本次抽奖中奖概率为10%，本次抽奖中奖概率为10%</p>
+        <p class="tips">Tips:本次抽奖中奖概率为10%，本次抽奖中奖概率为10%</p>
+        <p class="tips">Tips:本次抽奖中奖概率为10%，本次抽奖中奖概率为10%</p>
     </div>
+    </div>
+
 </template>
 
 <script>
@@ -32,6 +49,7 @@ export default {
             this.prizeNo = randomNum
         },
         lotteryDone (res) {
+            console.log(res,'res')
             this.lotteryStart = 0
             let index = res.prizeNo - 1
             console.log(this.prizeList[index])
@@ -42,8 +60,43 @@ export default {
 </script>
 
 <style scoped>
+.left-box{
+    width:50%;
+    display:inline-block;
+    /* border-right:1px solid #999; */
+    height:700px;
+    
+}
+.left-content{
+    width:95%;
+    margin-left:5%;
+}
 .wraper{
-    width: 80%;
+    margin-left:20px;
+    width: 49%;
+    display:inline-block;
+    /* border:1px solid #afa; */
     margin: 0 auto;
+    vertical-align:top;
+}
+p{
+    text-align: left;
+    margin-top:20px;
+}
+.tips{
+    /* margin-left:30%; */
+    margin-top:10px;
+}
+input{
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
 }
 </style>
+<style>
+.lottery_wraper{
+    max-width:600px;
+    margin-left:10%;
+}
+</style>
+
